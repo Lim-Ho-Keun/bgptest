@@ -29,6 +29,9 @@ import glob
 import numpy as np
 from flask import Flask, render_template, url_for, request, send_file, abort
 from flask_socketio import SocketIO, emit, disconnect
+from werkzeug.serving import WSGIRequestHandler
+
+
 
 # Import customized libraries
 from app_realtime import app_realtime_detection
@@ -256,6 +259,7 @@ def test_disconnect():
 ## Launch app
 """
 if __name__ == '__main__':
+    WSGIRequestHandler.protocol_version="HTTP/1.1"
     socketio.run(app, debug=True)
     # app.run(debug=True)
 
