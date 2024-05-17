@@ -97,7 +97,7 @@ def app_offline_classification(header_offLine, input_exp_key):
                     cd RNN_Run/; sh ./collect.sh; \
                     cp -r res_acc res_run ../data_representation/ ; \
                     cd .. ; cd data_representation/ ; \
-                    python TableGenerator.py; " \
+                    python3 TableGenerator.py; " \
                    % (cut_pct, site, cut_pct, site, cut_pct, site, cut_pct, site))
 
     print("--------------------Experiment-end----------------------------")
